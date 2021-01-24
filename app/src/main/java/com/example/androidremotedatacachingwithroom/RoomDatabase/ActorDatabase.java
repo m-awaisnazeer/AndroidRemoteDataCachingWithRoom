@@ -17,7 +17,7 @@ public abstract class ActorDatabase extends RoomDatabase {
 
     private static volatile ActorDatabase INSTANCE;
 
-    private static ActorDatabase getINSTANCE(Context context){
+    public static ActorDatabase getINSTANCE(Context context){
         if (INSTANCE == null){
             synchronized (ActorDatabase.class){
                 if (INSTANCE == null){
