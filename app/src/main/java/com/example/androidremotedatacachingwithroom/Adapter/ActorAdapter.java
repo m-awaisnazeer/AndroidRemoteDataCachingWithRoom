@@ -16,12 +16,12 @@ import com.example.androidremotedatacachingwithroom.RoomDatabase.Actor;
 
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class ActorAdapter extends RecyclerView.Adapter<ActorAdapter.ViewHolder> {
 
     private Context context;
     private List<Actor> actors;
 
-    public Adapter(Context context, List<Actor> actors) {
+    public ActorAdapter(Context context, List<Actor> actors) {
         this.context = context;
         this.actors = actors;
     }
@@ -36,8 +36,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         Actor actor = actors.get(position);
-        holder.id.setText(actor.getId());
-        holder.age.setText(actor.getAge());
+        holder.id.setText(String.valueOf(actor.getId()));
+        //holder.age.setText(actor.getAge());
         holder.name.setText(actor.getName());
         Glide.with(context).load(actor.getImage()).into(holder.image);
     }
